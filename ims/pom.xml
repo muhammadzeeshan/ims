@@ -4,7 +4,7 @@
   <artifactId>ims</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <modules>
+  <!-- <modules>
   	<module>webapp</module>
-  </modules>
+  </modules> -->
 </project>

@@ -7,4 +7,12 @@
   <!-- <modules>
   	<module>webapp</module>
   </modules> -->
+  <modules>
+  	<module>security</module>
+  	<module>core</module>
+  	<module>academics</module>
+  	<module>dal</module>
+  	<module>utility</module>
+  	<module>collection</module>
+  </modules>
 </project>

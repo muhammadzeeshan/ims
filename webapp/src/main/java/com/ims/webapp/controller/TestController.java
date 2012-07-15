@@ -1,4 +1,4 @@
-package com.ims.controller;
+package com.ims.webapp.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

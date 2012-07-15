@@ -8,4 +8,21 @@
   </parent>
   <artifactId>security</artifactId>
   <description>User and rights management</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org</groupId>
+  		<artifactId>core</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org</groupId>
+  		<artifactId>dal</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org</groupId>
+  		<artifactId>utility</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

@@ -8,4 +8,21 @@
   </parent>
   <artifactId>collection</artifactId>
   <description>Monetry collection and its mainaintnce in GL (General Ledger)</description>
+  <dependencies>
+  	<dependency>
+  		<groupId>org</groupId>
+  		<artifactId>core</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org</groupId>
+  		<artifactId>dal</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org</groupId>
+  		<artifactId>utility</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>

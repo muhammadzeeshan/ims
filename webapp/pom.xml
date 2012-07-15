@@ -139,6 +139,36 @@
 	            </exclusion>
 	        </exclusions>
 	    </dependency>
+	    <dependency>
+	    	<groupId>org</groupId>
+	    	<artifactId>academics</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org</groupId>
+	    	<artifactId>collection</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org</groupId>
+	    	<artifactId>core</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org</groupId>
+	    	<artifactId>dal</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org</groupId>
+	    	<artifactId>security</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org</groupId>
+	    	<artifactId>utility</artifactId>
+	    	<version>0.0.1-SNAPSHOT</version>
+	    </dependency>
 	</dependencies>  
 
 	<build>

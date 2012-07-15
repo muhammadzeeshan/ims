@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 15, 2012 5:12:06 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="CollectionSetupData" table="Collection_Setup_Data" catalog="ims2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="collectionReference" class="CollectionReference" fetch="select">
+            <column name="Collection_Reference_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="durationType" class="DurationType" fetch="select">
+            <column name="Duration_Type_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="collectionType" class="CollectionType" fetch="select">
+            <column name="Collection_Type_id" not-null="true" />
+        </many-to-one>
+        <property name="collectionReferenceFieldId" type="java.lang.Integer">
+            <column name="collection_reference_field_id" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="start_date" length="10" />
+        </property>
+        <property name="lastDate" type="date">
+            <column name="last_date" length="10" />
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount" />
+        </property>
+        <set name="collections" table="Collection" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Collection_Setup_Data_id" not-null="true" />
+            </key>
+            <one-to-many class="Collection" />
+        </set>
+    </class>
+</hibernate-mapping>

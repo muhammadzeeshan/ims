@@ -14,5 +14,6 @@
   	<module>dal</module>
   	<module>utility</module>
   	<module>collection</module>
+  	<module>webapp</module>
   </modules>
 </project>

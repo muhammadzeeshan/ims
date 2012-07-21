@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 15, 2012 5:12:06 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="UserRoleInstituteBranchModule" table="User_Role_Institute_Branch_Module" catalog="ims2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="roleInstituteBranchModule" class="RoleInstituteBranchModule" fetch="select">
+            <column name="Role_Institute_Branch_Module_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="instituteBranchTenureUser" class="InstituteBranchTenureUser" fetch="select">
+            <column name="Institute_Branch_Tenure_User_id" not-null="true" />
+        </many-to-one>
+        <set name="userRoleScreenElements" table="User_Role_Screen_Element" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="User_Role_Institute_Branch_Module_id" not-null="true" />
+            </key>
+            <one-to-many class="UserRoleScreenElement" />
+        </set>
+    </class>
+</hibernate-mapping>

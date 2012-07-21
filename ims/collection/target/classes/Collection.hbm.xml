@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 15, 2012 5:12:06 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Collection" table="Collection" catalog="ims2">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="durationType" class="DurationType" fetch="select">
+            <column name="Duration_Type_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="instituteBranchTenureUser" class="InstituteBranchTenureUser" fetch="select">
+            <column name="Institute_Branch_Tenure_User_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="collectionSetupData" class="CollectionSetupData" fetch="select">
+            <column name="Collection_Setup_Data_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="collectionMode" class="CollectionMode" fetch="select">
+            <column name="Collection_Mode_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="collectionStatus" class="CollectionStatus" fetch="select">
+            <column name="Collection_Status_id" not-null="true" />
+        </many-to-one>
+        <set name="transactions" table="Transaction" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Collection_id" not-null="true" />
+            </key>
+            <one-to-many class="Transaction" />
+        </set>
+    </class>
+</hibernate-mapping>

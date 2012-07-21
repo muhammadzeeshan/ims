@@ -1,4 +1,6 @@
 #Eclipse Project Files
 .classpath
+.class
+ims/*/target
 
 

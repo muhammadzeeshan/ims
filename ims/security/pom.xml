@@ -24,5 +24,11 @@
   		<artifactId>utility</artifactId>
   		<version>0.0.1-SNAPSHOT</version>
   	</dependency>
-  </dependencies>
+	<dependency>
+	   <groupId>javax.persistence</groupId>
+	   <artifactId>persistence-api</artifactId>
+	   <version>1.0.2</version>
+	   <scope>provided</scope>
+	</dependency>
+  	</dependencies>
 </project>

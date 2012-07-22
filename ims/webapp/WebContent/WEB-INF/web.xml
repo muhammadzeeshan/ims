@@ -15,7 +15,14 @@
 
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>*.rz</url-pattern>
     </servlet-mapping>
+    	
+    <!-- Declating Listerner. This will automatically load "applicationContext.xml" from WEB-INF folder -->	
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
     	
 </web-app>

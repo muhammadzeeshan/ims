@@ -14,8 +14,8 @@
 
 	<!-- Declare a datasource that has pooling capabilities -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
-		destroy-method="close" p:driverClass="${database.driver}" p:jdbcUrl="${database.url}"
-		p:user="${database.user}" p:password="${database.password}"
+		destroy-method="close" p:driverClass="${db.driverclassName}" p:jdbcUrl="${db.databaseurl}"
+		p:user="${db.username}" p:password="${db.password}"
 		p:acquireIncrement="5" p:idleConnectionTestPeriod="60" p:maxPoolSize="100"
 		p:maxStatements="50" p:minPoolSize="10" />
 
@@ -23,7 +23,7 @@
 	<!-- Declare a JPA entityManagerFactory -->
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-		<property name="persistenceXmlLocation" value="/WEB-INF/conf/persistence.xml"></property>
+		<property name="persistenceXmlLocation" value="/WEB-INF/conf/persistance.xml"></property>
 		<property name="persistenceUnitName" value="jpaPersistanceUnit" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>

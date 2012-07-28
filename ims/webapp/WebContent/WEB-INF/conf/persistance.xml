@@ -2,7 +2,7 @@
 	version="1.0">
 
 	<persistence-unit name="jpaPersistanceUnit" transaction-type="RESOURCE_LOCAL">
-		<provider>org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter</provider> 
+		<provider>org.hibernate.ejb.HibernatePersistence</provider> 
 		<properties>
 			<property name="hibernate.ejb.autodetection" value="class"/>
 			<property name="hibernate.hbm2ddl.auto" value="none" />

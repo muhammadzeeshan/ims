@@ -10,6 +10,7 @@
 	<artifactId>webapp</artifactId>
 	<packaging>war</packaging>
 
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -190,6 +191,16 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<webXml>WebContent/WEB-INF/web.xml</webXml>
+					
+					<!-- telling WAR plufing to 'include other folder/resources toWEB-INF' folder while packaging  -->
+					<webResources>
+						<resource>
+							<!-- this is relative to the pom.xml directory -->
+							<directory>WebContent/WEB-INF/</directory>
+							<targetPath>WEB-INF/</targetPath>
+						</resource>
+					</webResources>
+					
 				</configuration>
 			</plugin>
 

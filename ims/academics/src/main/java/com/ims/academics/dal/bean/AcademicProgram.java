@@ -22,10 +22,14 @@ import javax.persistence.Table;
 @Table(name = "Academic_Program", catalog = "ims2")
 public class AcademicProgram implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Academic academic;
-	private Set academicProgramCourses = new HashSet(0);
-	private Set instituteBranchAcademicPrograms = new HashSet(0);
+	private Set<AcademicProgramCourse> academicProgramCourses = new HashSet<AcademicProgramCourse>(0);
+	private Set<InstituteBranchAcademicProgram> instituteBranchAcademicPrograms = new HashSet<InstituteBranchAcademicProgram>(0);
 
 	public AcademicProgram() {
 	}
@@ -34,8 +38,8 @@ public class AcademicProgram implements java.io.Serializable {
 		this.academic = academic;
 	}
 
-	public AcademicProgram(Academic academic, Set academicProgramCourses,
-			Set instituteBranchAcademicPrograms) {
+	public AcademicProgram(Academic academic, Set<AcademicProgramCourse> academicProgramCourses,
+			Set<InstituteBranchAcademicProgram> instituteBranchAcademicPrograms) {
 		this.academic = academic;
 		this.academicProgramCourses = academicProgramCourses;
 		this.instituteBranchAcademicPrograms = instituteBranchAcademicPrograms;
@@ -63,21 +67,21 @@ public class AcademicProgram implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "academicProgram")
-	public Set getAcademicProgramCourses() {
+	public Set<AcademicProgramCourse> getAcademicProgramCourses() {
 		return this.academicProgramCourses;
 	}
 
-	public void setAcademicProgramCourses(Set academicProgramCourses) {
+	public void setAcademicProgramCourses(Set<AcademicProgramCourse> academicProgramCourses) {
 		this.academicProgramCourses = academicProgramCourses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "academicProgram")
-	public Set getInstituteBranchAcademicPrograms() {
+	public Set<InstituteBranchAcademicProgram> getInstituteBranchAcademicPrograms() {
 		return this.instituteBranchAcademicPrograms;
 	}
 
 	public void setInstituteBranchAcademicPrograms(
-			Set instituteBranchAcademicPrograms) {
+			Set<InstituteBranchAcademicProgram> instituteBranchAcademicPrograms) {
 		this.instituteBranchAcademicPrograms = instituteBranchAcademicPrograms;
 	}
 

@@ -22,6 +22,10 @@ import com.ims.security.dal.bean.InstituteBranchTenureUser;
 @Table(name = "Institute_Branch_User_Academic_Program", catalog = "ims2")
 public class InstituteBranchUserAcademicProgram implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private InstituteBranchTenureUser instituteBranchTenureUser;
 	private TenureAcademicProgramCourse tenureAcademicProgramCourse;

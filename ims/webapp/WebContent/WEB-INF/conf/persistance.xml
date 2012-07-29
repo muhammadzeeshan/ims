@@ -2,10 +2,53 @@
 	version="1.0">
 
 	<persistence-unit name="jpaPersistanceUnit" transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.ejb.HibernatePersistence</provider> 
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.ims.academics.dal.bean.Academic</class>
+		<class>com.ims.academics.dal.bean.AcademicProgram</class>
+		<class>com.ims.academics.dal.bean.AcademicProgramCourse</class>
+		<class>com.ims.academics.dal.bean.Course</class>
+		<class>com.ims.academics.dal.bean.InstituteBranchAcademicProgram</class>
+		<class>com.ims.academics.dal.bean.InstituteBranchUserAcademicProgram</class>
+		<class>com.ims.academics.dal.bean.TenureAcademicProgramCourse</class>
+		
+		<class>com.ims.collection.dal.bean.Collection</class>
+		<class>com.ims.collection.dal.bean.CollectionMode</class>
+		<class>com.ims.collection.dal.bean.CollectionReference</class>
+		<class>com.ims.collection.dal.bean.CollectionSetupData</class>
+		<class>com.ims.collection.dal.bean.CollectionStatus</class>
+		<class>com.ims.collection.dal.bean.CollectionType</class>
+		<class>com.ims.collection.dal.bean.Transaction</class>
+		<class>com.ims.collection.dal.bean.TransactionType</class>
+		<class>com.ims.collection.dal.bean.TransactionTypeDetail</class>
+		
+		<class>com.ims.core.dal.bean.Institute</class>
+		<class>com.ims.core.dal.bean.InstituteBranch</class>
+		<class>com.ims.core.dal.bean.InstituteBranchTenure</class>
+		<class>com.ims.core.dal.bean.Tenure</class>
+		
+		
+		<class>com.ims.security.dal.bean.BusinessData</class>
+		<class>com.ims.security.dal.bean.BusinessDataReference</class>
+		<class>com.ims.security.dal.bean.BusinessFields</class>
+		<class>com.ims.security.dal.bean.InstituteBranchModule</class>
+		<class>com.ims.security.dal.bean.InstituteBranchTenureUser</class>
+		<class>com.ims.security.dal.bean.Module</class>
+		<class>com.ims.security.dal.bean.ModuleScreen</class>
+		<class>com.ims.security.dal.bean.ModuleScreenElement</class>
+		<class>com.ims.security.dal.bean.Permission</class>
+		<class>com.ims.security.dal.bean.Role</class>
+		<class>com.ims.security.dal.bean.RoleInstituteBranchModule</class>
+		<class>com.ims.security.dal.bean.RoleType</class>
+		<class>com.ims.security.dal.bean.Rule</class>
+		<class>com.ims.security.dal.bean.UserProfile</class>
+		<class>com.ims.security.dal.bean.UserRoleInstituteBranchModule</class>
+		<class>com.ims.security.dal.bean.UserRoleScreenElement</class>
+		<class>com.ims.security.dal.bean.Users</class>
+		
+		
+		 
 		<properties>
-			<property name="hibernate.ejb.autodetection" value="class"/>
-			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.hbm2ddl.auto" value="create" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.show_sql" value="true" />
 		</properties>

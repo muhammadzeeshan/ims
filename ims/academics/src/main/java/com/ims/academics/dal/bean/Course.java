@@ -20,13 +20,17 @@ import javax.persistence.Table;
 @Table(name = "Course", catalog = "ims2")
 public class Course implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
-	private Set academicProgramCourses = new HashSet(0);
+	private Set<AcademicProgramCourse> academicProgramCourses = new HashSet<AcademicProgramCourse>(0);
 
 	public Course() {
 	}
 
-	public Course(Set academicProgramCourses) {
+	public Course(Set<AcademicProgramCourse> academicProgramCourses) {
 		this.academicProgramCourses = academicProgramCourses;
 	}
 
@@ -42,11 +46,11 @@ public class Course implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "course")
-	public Set getAcademicProgramCourses() {
+	public Set<AcademicProgramCourse> getAcademicProgramCourses() {
 		return this.academicProgramCourses;
 	}
 
-	public void setAcademicProgramCourses(Set academicProgramCourses) {
+	public void setAcademicProgramCourses(Set <AcademicProgramCourse> academicProgramCourses) {
 		this.academicProgramCourses = academicProgramCourses;
 	}
 

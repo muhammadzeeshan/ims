@@ -26,10 +26,14 @@ import com.ims.core.dal.bean.InstituteBranchTenure;
 @Table(name = "Tenure_Academic_Program_Course", catalog = "ims2")
 public class TenureAcademicProgramCourse implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private InstituteBranchTenure instituteBranchTenure;
 	private AcademicProgramCourse academicProgramCourse;
-	private Set instituteBranchUserAcademicPrograms = new HashSet(0);
+	private Set<InstituteBranchUserAcademicProgram> instituteBranchUserAcademicPrograms = new HashSet<InstituteBranchUserAcademicProgram>(0);
 
 	public TenureAcademicProgramCourse() {
 	}
@@ -44,7 +48,7 @@ public class TenureAcademicProgramCourse implements java.io.Serializable {
 	public TenureAcademicProgramCourse(
 			InstituteBranchTenure instituteBranchTenure,
 			AcademicProgramCourse academicProgramCourse,
-			Set instituteBranchUserAcademicPrograms) {
+			Set<InstituteBranchUserAcademicProgram> instituteBranchUserAcademicPrograms) {
 		this.instituteBranchTenure = instituteBranchTenure;
 		this.academicProgramCourse = academicProgramCourse;
 		this.instituteBranchUserAcademicPrograms = instituteBranchUserAcademicPrograms;
@@ -84,12 +88,12 @@ public class TenureAcademicProgramCourse implements java.io.Serializable {
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tenureAcademicProgramCourse")
-	public Set getInstituteBranchUserAcademicPrograms() {
+	public Set<InstituteBranchUserAcademicProgram> getInstituteBranchUserAcademicPrograms() {
 		return this.instituteBranchUserAcademicPrograms;
 	}
 
 	public void setInstituteBranchUserAcademicPrograms(
-			Set instituteBranchUserAcademicPrograms) {
+			Set<InstituteBranchUserAcademicProgram> instituteBranchUserAcademicPrograms) {
 		this.instituteBranchUserAcademicPrograms = instituteBranchUserAcademicPrograms;
 	}
 

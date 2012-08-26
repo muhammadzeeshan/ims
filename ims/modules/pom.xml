@@ -6,23 +6,17 @@
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
-  <artifactId>core</artifactId>
+  <artifactId>modules</artifactId>
   <dependencies>
   	<dependency>
-  		<groupId>org</groupId>
-  		<artifactId>dal</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>3.6.0.Final</version>
   	</dependency>
   	<dependency>
-  		<groupId>org</groupId>
-  		<artifactId>utility</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
+  		<groupId>org.hibernate.javax.persistence</groupId>
+  		<artifactId>hibernate-jpa-2.0-api</artifactId>
+  		<version>1.0.0.Final</version>
   	</dependency>
-	<dependency>
-	   <groupId>javax.persistence</groupId>
-	   <artifactId>persistence-api</artifactId>
-	   <version>1.0.2</version>
-	   <scope>provided</scope>
-	</dependency>
-  	</dependencies>
+  </dependencies>
 </project>

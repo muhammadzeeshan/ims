@@ -1,0 +1,41 @@
+<project name="AutoGenerateEntities" default="autogen" basedir=".">
+	
+	<property  name="src.dir" value="${basedir}/src/main/java/"></property>
+	<property  name="base.dir" value="${basedir}/resources"></property>
+	<path id="toolslib">
+		
+		<fileset dir="${base.dir}/lib/">
+			<include name="*.jar"/>
+			<include name="/hibernate3.jar"/>
+		</fileset>
+	</path>
+
+	<taskdef name="hibernatetool"  
+		classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="toolslib"/>
+	
+	
+	<target name="autogen">
+		<echo> Deleting entities... </echo>
+		<delete failonerror="false" verbose="yes">
+			<fileset dir="${src.dir}com/ims/dal/entities">
+				<include name="*.java"/>
+			</fileset>
+		</delete>
+		
+		<echo> Auto generating entities... </echo>
+		<hibernatetool destdir="${src.dir}">
+
+			<jdbcconfiguration  packagename="com.ims.dal.entities"
+				propertyfile="${base.dir}/hibernate.properties"
+				revengfile="${base.dir}/ims.reveng.xml"
+				detectManytoMany="true" 
+				detectOptimisticLock="true"/>
+			
+			<hbm2java jdk5="true" ejb3="true"/>
+			
+		</hibernatetool>
+			
+	</target>
+
+
+</project>

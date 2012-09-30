@@ -10,5 +10,6 @@
   <modules>
   	<module>webapp</module>
   	<module>modules</module>
+  	<module>dal</module>
   </modules>
 </project>

@@ -163,20 +163,78 @@
 			</exclusions>
 		</dependency>
 		<dependency>
-		    <groupId>c3p0</groupId>
-		    <artifactId>c3p0</artifactId>
-		    <version>0.9.1.2</version>
+			<groupId>c3p0</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.1.2</version>
 		</dependency>
 		<dependency>
-		    <groupId>org.hibernate</groupId>
-		    <artifactId>hibernate-c3p0</artifactId>
-		    <version>3.3.1.GA</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>3.3.1.GA</version>
 		</dependency>
 		<dependency>
 			<groupId>org</groupId>
 			<artifactId>modules</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>org</groupId>
+			<artifactId>dal</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.3.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts-annotations</artifactId>
+			<version>1.0.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-velocity</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-tiles-plugin</artifactId>
+			<version>2.3.4.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>tiles-core</artifactId>
+					<groupId>org.apache.tiles</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>tiles-jsp</artifactId>
+					<groupId>org.apache.tiles</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet-wildcard</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -197,8 +255,9 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<webXml>WebContent/WEB-INF/web.xml</webXml>
-					
-					<!-- telling WAR plufing to 'include other folder/resources toWEB-INF' folder while packaging  -->
+
+					<!-- telling WAR plufing to 'include other folder/resources toWEB-INF' 
+						folder while packaging -->
 					<webResources>
 						<resource>
 							<!-- this is relative to the pom.xml directory -->
@@ -206,7 +265,7 @@
 							<targetPath>WEB-INF/</targetPath>
 						</resource>
 					</webResources>
-					
+
 				</configuration>
 			</plugin>
 

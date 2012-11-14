@@ -1,17 +1,24 @@
 package com.ims.webapp.controller;
+import org.apache.struts.annotations.*;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Actions;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.convention.annotation.ResultPath;
+import org.apache.struts2.convention.annotation.Results;
+import org.apache.struts2.views.tiles.TilesResult;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import com.opensymphony.xwork2.ActionSupport;
 
-
-@Controller
+@Namespace(value="/test")
+@ResultPath(value="/")
+@Results({
+	@Result(name="success", location="tiletest", type="tiles")
+})
 public class TestController {
-    
-    @RequestMapping("/test")
-    public ModelAndView helloWorld() {
-    	
-        String message = "Test Hello World";
-        return new ModelAndView("test", "message", message);
-    }
+	
+	@Action(value="handle")
+	public String  handleTest(){
+		return "success";
+	}
 }

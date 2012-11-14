@@ -234,7 +234,12 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.4</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-convention-plugin</artifactId>
+			<version>2.3.4.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -261,8 +266,8 @@
 					<webResources>
 						<resource>
 							<!-- this is relative to the pom.xml directory -->
-							<directory>WebContent/WEB-INF/</directory>
-							<targetPath>WEB-INF/</targetPath>
+							<directory>WebContent/</directory>
+							<targetPath>/</targetPath>
 						</resource>
 					</webResources>
 

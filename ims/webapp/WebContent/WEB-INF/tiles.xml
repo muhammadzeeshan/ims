@@ -35,10 +35,10 @@
   <!-- =======================================================  -->
 
   <!-- Doc index page description  -->
-  <definition name="tiletest" template="/layout.vm" templateType="velocity" >
+  <definition name="tiletest" template="/WEB-INF/vm/layout.vm" templateType="velocity" >
       <put-attribute name="title"  value="This is a configured inner definition." type="velocity"/>
-      <put-attribute name="header" value="vm/HelloWorld.vm" type="velocity"/>
-      <put-attribute name="body"   value="vm/HelloWorld.vm" type="velocity"/>
+      <put-attribute name="header" value="/WEB-INF/vm/HelloWorld.vm" type="velocity"/>
+      <put-attribute name="body"   value="/WEB-INF/vm/HelloWorld.vm" type="velocity"/>
   </definition>
 </tiles-definitions>
 

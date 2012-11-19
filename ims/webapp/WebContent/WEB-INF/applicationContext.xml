@@ -20,7 +20,6 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
 	<!-- Configures the annotation-driven Spring MVC Controller programming 
 		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
 	<mvc:annotation-driven />
-	
-	<import resource="/conf/hibernateContext.xml"/>
+
 	
 </beans>

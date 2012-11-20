@@ -9,6 +9,7 @@
   <artifactId>dal</artifactId>
   
   	<build>
+  		<finalName>dal</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>

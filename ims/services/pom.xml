@@ -10,7 +10,7 @@
   <packaging>war</packaging>
   
   	<build>
-
+		<finalName>services</finalName>
 		<plugins>
 
 			<plugin>

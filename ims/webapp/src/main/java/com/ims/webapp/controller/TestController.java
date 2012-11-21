@@ -10,7 +10,7 @@ import org.apache.struts2.views.tiles.TilesResult;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-@Namespace(value="/test")
+@Namespace(value="/")
 @ResultPath(value="/")
 @Results({
 	@Result(name="success", location="tiletest", type="tiles")

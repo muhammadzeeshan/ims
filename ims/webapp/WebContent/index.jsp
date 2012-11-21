@@ -6,6 +6,6 @@
     <title>Spring 3.0 MVC Test - Index JSP</title>
 </head>
 <body>
-    <a href="test.html">Test Hello</a>
+    <a href="test/handle.action">Test Hello</a>
 </body>
 </html>

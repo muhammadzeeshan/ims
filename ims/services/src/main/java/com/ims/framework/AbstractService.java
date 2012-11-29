@@ -17,8 +17,8 @@ public abstract class AbstractService<E, D extends AbstractDAO<E> > implements C
 	
 	@Override
 	@Transactional
-	public void save(E obj) {
-		daoObj.save(obj);
+	public void persist(E obj) {
+		daoObj.persist(obj);
 	}
 
 	@Override
@@ -27,14 +27,12 @@ public abstract class AbstractService<E, D extends AbstractDAO<E> > implements C
 		return daoObj.merge(obj);
 	}
 
-	@Override
-	public void delete(E obj) {
-		daoObj.delete(obj);
+	public Collection<E> getAll(Class<E> clazz){
+		return daoObj.getAll(clazz);
 	}
-
-	@Override
-	public Collection<E> getAll() {
-		return daoObj.getAll();
+	
+	public E getById(Class<E> clazz, Long id){
+		return daoObj.getById(clazz, id);
 	}
-
+	
 }

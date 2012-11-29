@@ -31,10 +31,20 @@
 				detectManytoMany="true" 
 				detectOptimisticLock="true"/>
 			
-			<hbm2java jdk5="true" ejb3="true"/>
+			<hbm2java jdk5="true" ejb3="true" />
 			
 		</hibernatetool>
+		
+		<echo> Auto generating JPA Meta Model... </echo>
+		<javac srcdir="${src.dir}"	
+			destdir="${src.dir}"
+			failonerror="false"	
+			fork="true"		
+			classpathref="toolslib">
 			
+				<compilerarg value="-proc:only"/>
+		</javac>
+		
 	</target>
 
 

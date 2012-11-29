@@ -7,12 +7,12 @@ import org.springframework.transaction.annotation.Transactional;
 public interface CommonOperations<E> {
 
 
-	public void save(E obj);
+	public void persist(E obj);
 
 	public E merge(E obj);
-
-	public void delete(E obj);
 	
-	public Collection<E> getAll();
+	public Collection<E> getAll(Class<E> clazz);
+	
+	public E getById(Class<E> clazz, Long id);
 	
 }

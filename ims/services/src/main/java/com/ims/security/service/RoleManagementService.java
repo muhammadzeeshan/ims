@@ -10,4 +10,5 @@ import com.ims.security.dal.RoleDAO;
 @Service
 public class RoleManagementService extends AbstractService<Role, RoleDAO<Role> > {
 
+
 }

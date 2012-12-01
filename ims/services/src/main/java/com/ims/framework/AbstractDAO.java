@@ -44,6 +44,8 @@ public abstract class AbstractDAO <E> implements CommonOperations<E> {
 		CriteriaQuery<E> query = this.getEntityManager().getCriteriaBuilder().
 				createQuery(clazz);
 		
+		query.select(query.from(clazz));
+		
 		return this.getEntityManager().createQuery(query).getResultList();
 	}
 

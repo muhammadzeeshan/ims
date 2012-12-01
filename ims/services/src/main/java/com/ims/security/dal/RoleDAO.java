@@ -6,4 +6,5 @@ import com.ims.framework.AbstractDAO;
 
 @Repository
 public class RoleDAO<Role> extends AbstractDAO<Role> {
+	
 }

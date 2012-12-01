@@ -17,17 +17,10 @@ http://www.springframework.org/schema/lang http://www.springframework.org/schema
 http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
- 
-  
 
-
-
-
-	<!-- Configures the annotation-driven Spring MVC Controller programming 
-		model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
+ <import resource="conf/commonConfigurations.xml"/>
+	<!-- Configures the annotation-driven Spring MVC Controller programming model. Note that, with Spring 3.0, this tag works in Servlet MVC only! -->
 	<mvc:annotation-driven />
-	
-
 
     
 </beans>

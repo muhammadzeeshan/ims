@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 @Namespace(value="/")
 @ResultPath(value="/")
 @Results({
-	@Result(name="success", location="tiletest", type="tiles")
+	@Result(name="success", location="desktopLayout", type="tiles")
 })
 public class TestController {
 	

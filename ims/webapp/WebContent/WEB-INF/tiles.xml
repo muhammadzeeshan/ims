@@ -40,6 +40,18 @@
       <put-attribute name="header" value="/WEB-INF/vm/HelloWorld.vm" type="velocity"/>
       <put-attribute name="body"   value="/WEB-INF/vm/HelloWorld.vm" type="velocity"/>
   </definition>
+
+  <definition name="desktopLayout" template="/WEB-INF/vm/layout/desktop/layout.vm" templateType="velocity" >
+      <put-attribute name="header" value="/WEB-INF/vm/layout/desktop/header.vm" type="velocity"/>
+      <put-attribute name="taskbar" value="/WEB-INF/vm/layout/desktop/taskbar.vm" type="velocity"/>
+      <put-attribute name="background" value="/WEB-INF/vm/layout/desktop/background.vm" type="velocity"/>
+      <put-attribute name="icons" value="/WEB-INF/vm/layout/desktop/icons.vm" type="velocity"/>
+  </definition>
+
+
+
+
+
 </tiles-definitions>
 
 

@@ -1,4 +1,4 @@
-package com.ims.dal.utility;
+package com.ims.utility;
 
 public enum Constants {
 

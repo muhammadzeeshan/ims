@@ -10,6 +10,7 @@
 		<module>webapp</module>
 		<module>dal</module>
 		<module>services</module>
+		<module>utility</module>
 	</modules>
 
 	<dependencies>

@@ -46,11 +46,8 @@
       <put-attribute name="taskbar" value="/WEB-INF/vm/layout/desktop/taskbar.vm" type="velocity"/>
       <put-attribute name="background" value="/WEB-INF/vm/layout/desktop/background.vm" type="velocity"/>
       <put-attribute name="icons" value="/WEB-INF/vm/layout/desktop/icons.vm" type="velocity"/>
+      <put-attribute name="dialog" value="/WEB-INF/vm/layout/desktop/dialog.vm" type="velocity"/>
   </definition>
-
-
-
-
 
 </tiles-definitions>
 

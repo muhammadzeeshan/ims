@@ -12,7 +12,7 @@ import javax.persistence.criteria.Root;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ims.utility.Constants;
+import com.ims.Constants;
 
 
 public abstract class AbstractDAO <E> implements CommonOperations<E> {

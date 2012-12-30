@@ -1,1 +1,1 @@
-<div id="icons" class="icons">Role Management</div>
+<div id="icons" class="icons" onclick="iconClickHandler(this)">Role Management</div>

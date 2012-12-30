@@ -1,5 +1,6 @@
 package com.ims.utility;
 
+
 import com.google.gson.Gson;
 
 public class GsonUtility {
@@ -12,7 +13,10 @@ public class GsonUtility {
 
 	public static <E> E getObjectFromJson(String json, Class<E> clazz){
 		Gson gson = new Gson();
+		
 		return gson.fromJson(json,clazz);
 	}
 
+	
+	
 }

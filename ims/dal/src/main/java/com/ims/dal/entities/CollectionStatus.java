@@ -1,5 +1,5 @@
 package com.ims.dal.entities;
-// Generated Oct 1, 2012 1:18:07 AM by Hibernate Tools 3.4.0.CR1
+// Generated Dec 30, 2012 4:18:24 PM by Hibernate Tools 3.4.0.CR1
 
 
 import java.util.Date;

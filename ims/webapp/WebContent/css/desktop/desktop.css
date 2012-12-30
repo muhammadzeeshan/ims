@@ -29,3 +29,13 @@
 	margin: 12% 0% 0% 1%;
 	text-align : center;
 }
+
+.dialog {
+	
+	border: medium solid red;
+    position: absolute;
+    z-index: 10000;
+    display:none;
+    background-color: white;
+
+}

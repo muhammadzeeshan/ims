@@ -113,6 +113,11 @@
 			<version>2.3.4.1</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org</groupId>
+			<artifactId>restclient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

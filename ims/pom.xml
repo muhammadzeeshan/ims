@@ -11,6 +11,7 @@
 		<module>dal</module>
 		<module>services</module>
 		<module>utility</module>
+		<module>restclient</module>
 	</modules>
 
 	<dependencies>

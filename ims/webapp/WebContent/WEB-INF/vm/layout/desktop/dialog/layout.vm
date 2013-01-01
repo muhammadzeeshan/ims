@@ -1,0 +1,17 @@
+	<table border="1">
+		<tr>
+            <td>
+				#tiles_insertAttribute({"name":"titlebar"})#end
+			</td>
+		</tr>
+		<tr>
+            <td>
+				#tiles_insertAttribute({"name":"contentarea"})#end
+			</td>
+		</tr>
+		<tr>
+            <td>
+				#tiles_insertAttribute({"name":"statusbar"})#end
+			</td>
+		</tr>
+	</table>

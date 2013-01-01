@@ -1,7 +1,10 @@
 package com.ims.utility;
 
 
+import java.lang.reflect.Type;
+
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class GsonUtility {
 
@@ -16,7 +19,4 @@ public class GsonUtility {
 		
 		return gson.fromJson(json,clazz);
 	}
-
-	
-	
 }

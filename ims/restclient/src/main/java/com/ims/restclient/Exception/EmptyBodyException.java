@@ -1,6 +1,6 @@
 package com.ims.restclient.Exception;
 
-public class EmptyBodyException extends RestClientExeption{
+public class EmptyBodyException extends RestClientException{
 
 	public EmptyBodyException(String message) {
 		super(message);

@@ -3,8 +3,13 @@ package com.ims.webapp.controller;
 
 
 import java.util.Collection;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.Namespace;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.ResultPath;
@@ -13,7 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ims.dal.vo.Role;
 import com.ims.restclient.RestClient;
-import com.ims.restclient.Exception.RestClientExeption;
+import com.ims.restclient.Exception.RestClientException;
 import com.ims.restclient.constants.RestServices;
 import com.ims.utility.GsonUtility;
 import com.ims.webapp.integration.struts2.ServletObjects;
@@ -24,7 +29,7 @@ import com.ims.webapp.integration.struts2.ServletObjects;
 @Results({
 	@Result(name="displayRoles", location="dialogLayout", type="tiles")
 })
-public class RoleManagementController {
+public class RoleManagementController extends AbstractController {
 
 
 	private Role role;
@@ -60,30 +65,32 @@ public class RoleManagementController {
 
 	@Action(value="getRoles")
 	public String displayRoles() {
-/*		try {
+		try {
 			RestClient client = new RestClient(RestServices.ROLE_GETALL);
 			client.executeRequest();
+			
 			String body = new String(client.getResponseWrapper().getBody().toByteArray());
 			Collection<Role> roles = new GsonUtility().getObjectFromJson(body, Collection.class);
 			this.setRoles(roles);
+			setTemplatePathRequestAttribute("security/roleList.vm");
 			
-		} catch (RestClientExeption e) {
+		} catch (RestClientException e) {
 			e.printStackTrace();
 		}
-*/		
+		
 		
 		System.out.println("****************** DISPLAY ROLES ********************");
 		return "displayRoles";
 	}
 
 	@Action(value="saveRole")
-	public String saveRole()throws RestClientExeption {
+	public String saveRole()throws RestClientException {
 		try {
 			String  json = GsonUtility.getJsonFromObject(this.getRole());
 			RestClient client = new RestClient(RestServices.ROLE_SAVE,json,null);
 			client.executeRequest();
 			
-		} catch (RestClientExeption e) {
+		} catch (RestClientException e) {
 			e.printStackTrace();
 			throw e;
 		}
@@ -95,14 +102,14 @@ public class RoleManagementController {
 	
 	
 	@Action(value="getRoleById")
-	public String getRoleById()throws RestClientExeption {
+	public String getRoleById()throws RestClientException {
 		try {
 			RestClient client = new RestClient(RestServices.ROLE_SAVE, roleId, null);
 			client.executeRequest();
 			Role role = GsonUtility.getObjectFromJson(new String(client.getResponseWrapper().getBody().toByteArray()),Role.class);
 			this.setRole(role);
 			
-		} catch (RestClientExeption e) {
+		} catch (RestClientException e) {
 			e.printStackTrace();
 			throw e;
 		}
@@ -110,5 +117,8 @@ public class RoleManagementController {
 		System.out.println("****************** SAVE ROLE ********************");
 		return "displayRoles";
 	}
-	
+
+
+
+
 }

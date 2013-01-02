@@ -1,4 +1,6 @@
 Content
 
-#set($var = "/WEB-INF/vm/layout/desktop/taskbar.vm")
-#parse("#evaluate($var)")
+#set($path = $request["templatePath"])
+#if($path)
+	#parse($path)
+#end

@@ -3,9 +3,13 @@ package com.ims.webapp.util;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.ims.webapp.controller.AbstractController;
+
 public enum Constants {
 
-	DATATEMPLATE_PATH("datatemplates.path");
+	PROP_DATATEMPLATE_PATH("datatemplates.path"),
+	KEY_REQUEST_Attribute_TEMPLATEPATH("templatePath"),
+	TEXT_INVALID_CONTROLLER("Controller must extend "+AbstractController.class);
 	private String value;
 	
 	private Constants(String val) {

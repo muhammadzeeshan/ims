@@ -12,28 +12,31 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 
 import com.ims.restclient.Exception.EmptyBodyException;
-import com.ims.restclient.Exception.RestClientExeption;
+import com.ims.restclient.Exception.RestClientException;
 
 public enum RestServices {
 
-	ROLE_SAVE("/secuirty/role/save", HttpPost.METHOD_NAME),ROLE_GETBYID("/secuirty/role/{0}", HttpGet.METHOD_NAME),
-	ROLE_GETALL("/secuirty/role", HttpGet.METHOD_NAME);
+	ROLE_SAVE("/security/role/save", HttpPost.METHOD_NAME),ROLE_GETBYID("/security/role/{0}", HttpGet.METHOD_NAME),
+	ROLE_GETALL("/security/role", HttpGet.METHOD_NAME);
 	
 	private String serviceURL;
 	private String httpMethod;
-	private boolean canHaveBody;
+	private boolean canHaveRequestBody;
 	
 	private RestServices(String url, String requestMethod) {
 		this.httpMethod = requestMethod;
 		this.serviceURL = url;
 	}
+
 	
-	public boolean canHaveBody(){
-		return this.canHaveBody;
+	public boolean isCanHaveRequestBody() {
+		return canHaveRequestBody;
 	}
+
+
 	private String getServiceURL(String... params) {
 		
-		StringBuilder builder = new StringBuilder(Configuration.SERVICES_SERVER_URL.getValue());
+		StringBuilder builder = new StringBuilder(Configuration.SERVICES_SERVER_URL.getConfigurationFromProperties());
 		builder.append(this.serviceURL);
 		
 		for(int i=0; i<params.length && params != null && params.length > 0; i++) {
@@ -49,7 +52,7 @@ public enum RestServices {
 			return new StringEntity(body,ContentType.APPLICATION_JSON);
 	}
 	
-	public HttpRequestBase getRequestMethod(String body, String... params)throws RestClientExeption {
+	public HttpRequestBase getRequestMethod(String body, String... params)throws RestClientException {
 		
 		HttpRequestBase method = null;
 		
@@ -66,7 +69,7 @@ public enum RestServices {
 					HttpPut put = new HttpPut(this.getServiceURL(params));
 					put.setEntity(this.getStringEntity(body));
 					method = put;
-					canHaveBody = true;
+					canHaveRequestBody = true;
 				break;
 
 			case HttpPost.METHOD_NAME : 
@@ -76,7 +79,7 @@ public enum RestServices {
 					HttpPost post = new HttpPost(this.getServiceURL(params));
 					post.setEntity(this.getStringEntity(body));
 					method = post;
-					canHaveBody = true;
+					canHaveRequestBody = true;
 				break;
 
 			case HttpDelete.METHOD_NAME :

@@ -13,11 +13,22 @@
     
 
     <package name="ims-default" namespace="/" extends="struts-default">
-    
+    	
         <result-types>
         	<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"></result-type>
         </result-types>
+
+    	<interceptors>
+    		<interceptor name="validateController" class="com.ims.webapp.interceptors.ValidateControllerInterceptor"/>
+    		
+    		<!-- Extending default stack -->
+    		<interceptor-stack name="imsInterceptorsStack">
+        		<interceptor-ref name="defaultStack"/>
+        		<interceptor-ref name="validateController"/>
+       		</interceptor-stack>
+    	</interceptors>
         
+        <default-interceptor-ref name="imsInterceptorsStack"/>
     </package>
 
 </struts>

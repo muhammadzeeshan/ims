@@ -27,7 +27,7 @@ public enum Configuration {
 		
 		try {
 			configProperties = new Properties();
-			configProperties.load(Configuration.class.getResourceAsStream("/config.properties"));
+			configProperties.load(Configuration.class.getResourceAsStream("/restconfig.properties"));
 			
 		} catch (IOException e) {
 			e.printStackTrace();

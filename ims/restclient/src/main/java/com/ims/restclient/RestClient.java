@@ -12,9 +12,10 @@ import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.client.RestClientException;
 
-import com.ims.restclient.Exception.RestClientExeption;
+
+import com.ims.restclient.Exception.RestClientException;
+import com.ims.restclient.constants.Configuration;
 import com.ims.restclient.constants.RestServices;
 
 public final class RestClient {
@@ -46,7 +47,7 @@ public final class RestClient {
 	}
 
 	
-	public void executeRequest() throws RestClientExeption {
+	public void executeRequest() throws RestClientException {
 		
 		logger.info("Start : executeRequest()");
 		
@@ -67,7 +68,7 @@ public final class RestClient {
 			if(statusCode == HttpStatus.SC_OK) {
 				this.responseWrapper = new HttpResponseWrapper(statusCode,response.getStatusLine().getReasonPhrase());
 				
-				if(this.service.canHaveBody()) {
+				if(response.getEntity() != null) {
 					logger.info("Response has body");
 					ByteArrayOutputStream out = new ByteArrayOutputStream();
 					
@@ -81,7 +82,7 @@ public final class RestClient {
 				throw new RestClientException("Response Code : "+statusCode +" \nMessage : "+response.getStatusLine().getReasonPhrase());
 			}
 			
-		} catch (RestClientExeption e) {
+		} catch (RestClientException e) {
 			e.printStackTrace();
 			logger.error("Exception : Class ="+e.getClass() +"\nMessage = "+e.getMessage());
 			throw e;
@@ -89,13 +90,17 @@ public final class RestClient {
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
 			logger.error("Exception : Class ="+e.getClass() +"\nMessage = "+e.getMessage());
-			throw new RestClientExeption(e.getMessage(),e);
+			throw new RestClientException(e.getMessage(),e);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 			logger.error("Exception : Class ="+e.getClass() +"\nMessage = "+e.getMessage());
-			throw new RestClientExeption(e.getMessage(),e);
-			
+			throw new RestClientException(e.getMessage(),e);
+		}catch (Exception e) {
+			e.printStackTrace();
+			logger.error("Exception : Class ="+e.getClass() +"\nMessage = "+e.getMessage());
+			throw new RestClientException(e.getMessage(),e);
+				
 		} finally {
 			logger.info("Closing HttpCLient connection");
 			client.getConnectionManager().shutdown();
@@ -104,5 +109,10 @@ public final class RestClient {
 		logger.info("End : executeRequest()");
 	}
 
+	public static void main(String[] args){
+
+		System.out.print(Configuration.SERVICES_SERVER_URL.getConfigurationFromProperties());
+		
+	}
 
 }

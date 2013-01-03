@@ -5,7 +5,13 @@
 
 <script src="js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script src="js/jquery/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+<script src="js/ajaxRequestParameters.js" type="text/javascript"></script>
 <script src="js/common.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$.noConflict();
+	var CONTEXT_URL = "$link.getContextURL()";
+	var HTML_RESPONSE_TPE = "html";
 </script>
+
+
+

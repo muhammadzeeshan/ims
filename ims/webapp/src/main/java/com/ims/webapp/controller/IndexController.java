@@ -13,7 +13,7 @@ import org.apache.struts2.convention.annotation.Results;
 	@Result(name="displayLayout", location="desktopLayout", type="tiles")
 })
 
-public class IndexController {
+public class IndexController extends AbstractController {
 	
 	@Action(value="index")
 	public String displayLayout() {

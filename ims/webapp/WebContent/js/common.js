@@ -1,3 +1,4 @@
+
 function createModalDialog(){
 	
 	var dialogObj= jQuery("#dialog");
@@ -8,10 +9,34 @@ function createModalDialog(){
 		"top" : centerCoordinates.top+"px",
 		"left" : centerCoordinates.left+"px"
 	});
+	return dialogObj;
+	
 }
 
-function iconClickHandler(iconObj) {
-	createModalDialog();
+function iconClickHandler(iconObj, url) {
+	
+	var params = new AjaxRequestParameters(url);
+	params.setResponseType(HTML_RESPONSE_TPE);
+	
+	params.setSuccessHandler(function (param){
+		var data = params.getResponseData();
+		var dialogObj = createModalDialog();
+		dialogObj.empty();
+		dialogObj.append(data);
+		
+	}); 
+	
+	params.setErrorHandler(function (param) {
+		
+		//alert("request Error");
+	});
+	
+	params.setCompleteHandler(function (param) {
+		//alert("request Complete");
+	});
+		
+	sendAjaxRequest(params);
+	
 }
 
 function calculateCenterOfScreenRelativeToElem(elem){
@@ -35,4 +60,35 @@ function calculateCenterOfScreenRelativeToElem(elem){
 	
 	return axis;
 	
+}
+
+
+function sendAjaxRequest(params) {
+	
+	jQuery.ajax({
+		
+		url : params.getUrl(), 
+		dataType : params.getResponseType(),
+		beforeSend : function (xhr, settings){
+			
+		},
+		complete : function(xhr, textStatus){
+			params.setXhr(xhr);
+			params.setRequestStatus(textStatus);
+			params.executeCompleteHandler();
+			
+		},
+		error : function (xhr, textStatus, errorThrown){
+
+			params.setXhr(xhr);
+			params.setRequestStatus(textStatus);
+			params.setErrorThrown(errorThrown);
+			params.executeErrorHandler();
+			
+		},
+		success : function(responseData,textStatus, jqXHR) {
+			params.setResponseData(responseData);
+			params.executeSuccessHandler();
+		}
+	});
 }

@@ -1,2 +1,0 @@
-
-<div id="icons" class="icons" onclick="iconClickHandler(this,CONTEXT_URL+'/getRoles.action')">Role Management</div>

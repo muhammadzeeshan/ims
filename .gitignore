@@ -2,5 +2,5 @@
 .classpath
 .class
 ims/*/target
-
-
+ims/bin*
+ims/dal/src*

@@ -69,6 +69,7 @@ Desktop.prototype.placeNextIcon= function (prevIcon, currentIcon) {
 
 Desktop.prototype.createModuleIcons = function () {
 
+	var classInstance = this;
 	//1st Icon;
 	var icon = new Icon({
 		desktop : this,
@@ -83,6 +84,11 @@ Desktop.prototype.createModuleIcons = function () {
 		data:{},
 		handler : function(e){
 			console.log("I am First Icon")
+			var roleManagement = new RoleManagement({
+				desktop : classInstance
+			});
+			windows[roleManagement.getId()] = roleManagement;
+			roleManagement.init();
 		}
 	})
 

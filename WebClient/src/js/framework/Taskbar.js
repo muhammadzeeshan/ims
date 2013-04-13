@@ -26,8 +26,8 @@ Taskbar.prototype.createLayout= function() {
 	this._element = taskbar;
 	
 	this.setDimensions({
-		width : jQuery(desktopElem).css("width"),
-		height: getPixelsFromPrecentage(jQuery(desktopElem).outerHeight(), 5)
+		width : jQuery(desktopElem).outerWidth(),
+		height: getPixelsFromPrecentage(jQuery(desktopElem).outerHeight(), 8)
 	})
 };
 

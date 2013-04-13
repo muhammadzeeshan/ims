@@ -6,3 +6,8 @@ function getPixelsFromPrecentage(pixel , percentage){
 	return calculatedPixels;
 	
 }
+
+function getWindowHeight(){
+
+	return jQuery(window).height();
+}

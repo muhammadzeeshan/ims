@@ -8,7 +8,6 @@ function Desktop(){
 
 Desktop.prototype.init = function(){
 	this.createLayout();
-	
 };
 
 
@@ -25,31 +24,13 @@ Desktop.prototype.createLayout= function(){
 	this._taskbar = new Taskbar(this);
 	this._taskbar.init();
 
-	//1st Icon;
-	var icon = new Icon({
-		desktop : this,
-		title : "My Icon",
-		id:"icon-1",
-	});
-	icon.init();
-	this.placeIcon(icon)
-	this._icons[icon.getId()] = icon;
-
-	// 2nd icon;
-	var newIcon = new Icon({
-		desktop : this,
-		title : "My Another Icon",
-		id:"icon-2",
-	});
-	newIcon.init();
-	this.placeNextIcon(icon, newIcon);
-	this._icons[newIcon.getId()] = newIcon;
+	this.createModuleIcons();
 
 };
 
 Desktop.prototype.setDimensions= function (desktop){
 	jQuery(desktop).css({
-		"height":screen.height,
+		"height":getWindowHeight(),
 	});
 };
 
@@ -84,3 +65,44 @@ Desktop.prototype.placeNextIcon= function (prevIcon, currentIcon) {
 		left : iconLeft
 	});
 };
+
+
+Desktop.prototype.createModuleIcons = function () {
+
+	//1st Icon;
+	var icon = new Icon({
+		desktop : this,
+		title : "Role Management",
+		id:"iconRoleManagement",
+	});
+	icon.init();
+	this.placeIcon(icon)
+	this._icons[icon.getId()] = icon;
+	icon.bindEvent({
+		event : "dblclick",
+		data:{},
+		handler : function(e){
+			console.log("I am First Icon")
+		}
+	})
+
+	// 2nd icon;
+	var newIcon = new Icon({
+		desktop : this,
+		title : "My Another Icon",
+		id:"icon-2",
+	});
+	newIcon.init();
+	this.placeNextIcon(icon, newIcon);
+	this._icons[newIcon.getId()] = newIcon;
+	newIcon.bindEvent({
+		event : "dblclick",
+		data:{},
+		handler : function(e) {
+			console.log("I am Second Icon");
+		}
+	})
+
+};
+
+

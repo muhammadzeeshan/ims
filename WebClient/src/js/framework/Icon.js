@@ -16,9 +16,10 @@ Icon.prototype.init = function() {
 
 Icon.prototype.createLayout= function(){
 	
-	var icon = jQuery("<div></div>");
+	var icon = jQuery("<div class='icon'></div>");
 	jQuery(icon).attr("id",this._iconId);
-	jQuery(icon).addClass("icon");
+	jQuery(icon).attr("title" , this._title);
+	
 	
 	var desktopElem = this._desktopRef.getElement();
 	jQuery(desktopElem).append(icon);
@@ -53,3 +54,19 @@ Icon.prototype.getElement= function() {
 Icon.prototype.getId= function() {
 	return this._iconId;
 };
+
+
+
+Icon.prototype.bindEvent= function(args) {
+	
+	jQuery(this._element).bind(args.event, args.data, function(e){
+		
+		if(args && args.handler) {
+			args.handler()	
+		}
+		
+	});
+	
+};
+
+

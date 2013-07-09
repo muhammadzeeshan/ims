@@ -1,0 +1,8 @@
+<div style="display:none;">	#tiles_insertAttribute({"name":"header"})#end</div>
+
+<div id="desktop" class="desktop">
+	#tiles_insertAttribute({"name":"taskbar"})#end
+	#tiles_insertAttribute({"name":"background"})#end
+	#tiles_insertAttribute({"name":"icons"})#end
+	#tiles_insertAttribute({"name":"dialog"})#end
+</div>

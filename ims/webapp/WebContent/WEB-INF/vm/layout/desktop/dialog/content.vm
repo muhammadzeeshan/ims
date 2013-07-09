@@ -1,0 +1,6 @@
+Content
+
+#set($path = $request["templatePath"])
+#if($path)
+	#parse($path)
+#end

@@ -1,6 +1,6 @@
 package com.ims.webapp.util;
 
-import org.apache.struts2.ServletActionContext;
+
 
 public class Utility {
 

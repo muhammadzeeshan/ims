@@ -1,1 +1,2 @@
-INDEX.VM
+#set($code = "text.test")
+#springMessage($code)

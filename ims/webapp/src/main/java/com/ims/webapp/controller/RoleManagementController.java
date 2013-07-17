@@ -8,12 +8,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.struts2.convention.annotation.Action;
-import org.apache.struts2.convention.annotation.InterceptorRef;
-import org.apache.struts2.convention.annotation.Namespace;
-import org.apache.struts2.convention.annotation.Result;
-import org.apache.struts2.convention.annotation.ResultPath;
-import org.apache.struts2.convention.annotation.Results;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.ims.dal.vo.Role;
@@ -21,18 +15,17 @@ import com.ims.restclient.RestClient;
 import com.ims.restclient.Exception.RestClientException;
 import com.ims.restclient.constants.RestServices;
 import com.ims.utility.GsonUtility;
-import com.ims.webapp.integration.struts2.ServletObjects;
 
-
+/*
 @Namespace(value="/")
 @ResultPath(value="/")
 @Results({
 	@Result(name="displayRoles", location="dialogLayout", type="tiles")
-})
-public class RoleManagementController extends AbstractController {
+})*/
+public class RoleManagementController {
 
 
-	private Role role;
+/*	private Role role;
 	private String roleId;
 	private Collection<Role> roles;
 
@@ -72,7 +65,7 @@ public class RoleManagementController extends AbstractController {
 			String body = new String(client.getResponseWrapper().getBody().toByteArray());
 			Collection<Role> roles = new GsonUtility().getObjectFromJson(body, Collection.class);
 			this.setRoles(roles);
-			setTemplatePathRequestAttribute("security/roleList.vm");
+			//setTemplatePathRequestAttribute("security/roleList.vm");
 			
 		} catch (RestClientException e) {
 			e.printStackTrace();
@@ -119,6 +112,6 @@ public class RoleManagementController extends AbstractController {
 	}
 
 
-
+*/
 
 }
